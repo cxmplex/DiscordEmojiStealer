@@ -44,7 +44,9 @@ async def upload_emojis():
             destination_guild = guild
     if destination_guild:
         print("Found {} successfully.".format(destination_guild.name))
-    pass
+    else:
+        print("Did not find that server.")
+        exit()
     path = os.getcwd() + '\\' + "emojis" + '\\'
     emoji_files = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
     for file in emoji_files:
